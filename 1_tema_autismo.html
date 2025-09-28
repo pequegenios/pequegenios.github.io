@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números 1–10 </title>
+<link rel="stylesheet" href="1_tema_autismo.css">
+</head>
+<body>
+  <div class="background"></div>
+  <main class="wrap">
+    <header>
+      <h1>Números 1 → 10</h1>
+      <p class="lead">Toca los números en orden y desbloquea tu héroe</p>
+    </header>
+
+    <section id="game">
+      <div id="status" class="status">Comienza con 1</div>
+      <div id="board" class="board"></div>
+      <div id="completed" class="completed">✔ Números acertados</div>
+      <div class="controls">
+        <button id="reset" class="btn">Reiniciar</button>
+        <button id="hint" class="btn secondary">Pista</button>
+        <button id="back" class="btn link">Volver al mapa</button>
+      </div>
+      <div id="result" class="result"></div>
+    </section>
+
+    <div id="popupHero" class="popup hidden">
+      <div class="popup-content">
+        <h2>¡Héroe desbloqueado!</h2>
+        <img src="imagenes/sandino.jpg" alt="Héroe Sandino">
+        <p>Este es Sandino, un héroe histórico de Nicaragua. ¡Colecciónalo y descubre más héroes!</p>
+        <button id="collectBtn" class="btn">Coleccionar</button>
+      </div>
+    </div>
+
+    <div id="collectionPopup" class="popup hidden">
+      <div class="popup-content">
+        <h2>Mis Héroes</h2>
+        <div id="collection" class="collection"></div>
+        <button id="closeCollection" class="btn link">Cerrar</button>
+      </div>
+    </div>
+
+    <canvas id="confetti"></canvas>
+  </main>
+
+  
+
+<div id="endPopup" class="hidden">
+  <div class="popup-content">
+    <h2>¡Felicidades! 🎉</h2>
+    <p>Has completado este nivel.</p>
+    <button id="retryBtn">🔄 Reintentar</button>
+    <button id="mapBtn">🗺️ Ir al mapa</button>
+  </div>
+</div>
+
+
+  <audio id="correctSound" src="sonidos/correcto.mp3"></audio>
+  <audio id="wrongSound" src="sonidos/error.mp3"></audio>
+
+  <script src="1_tema_autismo.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números 1–10 – Juego Autismo</title>
+<link rel="stylesheet" href="mapa_dificultad.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="wrap">
+    <header>
+      <h1>Números 1 → 10</h1>
+      <p class="lead">Toca los números en orden y desbloquea tu personaje favorito</p>
+    </header>
+
+    <section id="game">
+      <div id="status" class="status">Comienza con 1</div>
+      <div id="board" class="board"></div>
+      <div id="completed" class="completed"></div>
+      <div class="controls">
+        <button id="reset" class="btn">Reiniciar</button>
+        <button id="hint" class="btn secondary">Pista</button>
+        <button id="back" class="btn link">Volver al mapa</button>
+      </div>
+      <div id="result" class="result"></div>
+      <div id="unlock" class="unlock"></div>
+    </section>
+
+    <canvas id="confetti"></canvas>
+  </main>
+
+  <audio id="correctSound" src="sonidos/correcto.mp3"></audio>
+  <audio id="wrongSound" src="sonidos/error.mp3"></audio>
+
+<script src="mapa_dificultad.js"></script>
+</body>
+</html>

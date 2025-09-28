@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Estudiantes - Matemáticas Neuroinclusivas</title>
+<link rel="stylesheet" href="creacion_estudiantes.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Gestión de Estudiantes - Matemáticas Neuroinclusivas</h1>
+  <div class="header-actions">
+    <button id="agregarEstudianteBtn">➕ Agregar Estudiante</button>
+    <div class="busqueda-container">
+      <input type="text" id="busqueda" placeholder="Buscar estudiante por nombre, apellido o código...">
+      <span class="lupa">🔍</span>
+      <div id="resultadosBusqueda" class="resultados-busqueda"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <table id="tablaEstudiantes">
+    <thead>
+      <tr>
+        <th>Código MINED</th>
+        <th>Nombre Completo</th>
+        <th>Grado</th>
+        <th>Tutor</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</main>
+
+<div id="modalEstudiante" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <form id="formEstudiante">
+      <h2 id="modalTitulo">Agregar Estudiante</h2>
+      <div class="form-row">
+        <div class="form-col">
+          <label for="codigo">Código MINED</label>
+          <input type="text" id="codigo" required>
+          <label for="nombre1">Nombre 1</label><input type="text" id="nombre1" readonly>
+          <label for="nombre2">Nombre 2</label><input type="text" id="nombre2" readonly>
+          <label for="apellido1">Apellido 1</label><input type="text" id="apellido1" readonly>
+          <label for="apellido2">Apellido 2</label><input type="text" id="apellido2" readonly>
+          <label for="fechaNacimiento">Fecha de Nacimiento</label><input type="date" id="fechaNacimiento" readonly>
+          <label for="grado">Grado</label><input type="text" id="grado" readonly>
+          <label for="historial">Historial Académico</label><button type="button" id="verHistorial">Ver Boletín</button>
+        </div>
+        <div class="form-col">
+          <label for="tutor">Tutor</label><input type="text" id="tutor" required>
+          <label for="telefono">Teléfono del Tutor</label><input type="tel" id="telefono" required>
+          <label for="parentesco">Parentesco</label><input type="text" id="parentesco" required>
+          <label for="direccion">Dirección</label><input type="text" id="direccion" required>
+          <label for="grupoSanguineo">Grupo Sanguíneo</label><input type="text" id="grupoSanguineo">
+          <label for="alergias">Alergias</label><input type="text" id="alergias">
+          <label for="seccion">Sección</label><input type="text" id="seccion">
+          <label for="docente">Docente Responsable</label><input type="text" id="docente">
+          <label>Condiciones</label>
+          <select id="condiciones" multiple>
+            <option value="autismo">Autismo</option>
+            <option value="dificultad_visual">Dificultad Visual</option>
+            <option value="dificultad_auditiva">Dificultad Auditiva</option>
+            <option value="ninguna">Ninguna</option>
+          </select>
+          <label for="gradoCondicion">Grado</label>
+          <select id="gradoCondicion">
+            <option value="leve">Leve</option>
+            <option value="medio">Medio</option>
+            <option value="moderado">Moderado</option>
+          </select>
+          <label for="consejos">Consejos Propuestos</label>
+          <textarea id="consejos"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit">Guardar</button>
+        <button type="button" id="exportPDF">Descargar PDF</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="creacion_estudiantes.js"></script>
+</body>
+</html>

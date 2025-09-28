@@ -1,0 +1,154 @@
+/* =========================
+   ESTILOS DEL MAPA
+========================= */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+/* Fondo oscurecido y difuminado */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("imagenes/mapa1.png") no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(2px);
+  z-index: -1; /* mantiene el fondo atrás */
+}
+
+/* Botones de niveles */
+.nivel {
+  position: absolute;
+  padding: 18px 22px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(145deg, #efff0c, #ff8800);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.nivel:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(145deg, #685c19, #a78b0e);
+}
+
+/* Posición de los niveles */
+#nivel1 { top: 60%; left: 15%; }
+#nivel2 { top: 40%; left: 45%; }
+#nivel3 { top: 70%; left: 75%; }
+
+/* Animación de botón */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* =========================
+   POPUP DISEÑO
+========================= */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.4s ease;
+}
+
+.popup-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 35px 30px;
+  border-radius: 25px;
+  width: 60%;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+  animation: zoomIn 0.5s ease;
+  font-size: 1.2em;
+  color: #333;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+  transition: transform 0.3s;
+}
+
+.popup-content:hover {
+  transform: translateY(-5px);
+}
+
+.popup-content h2 {
+  margin-bottom: 15px;
+  color: #d90429;
+  font-size: 1.7em;
+  animation: shake 0.8s infinite alternate;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+
+.popup-content .emoji {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  animation: bounce 1.2s infinite;
+}
+
+.close {
+  position: absolute;
+  top: 12px; right: 20px;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.close:hover {
+  color: #ff4444;
+  transform: rotate(20deg);
+}
+
+/* Animaciones */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+
+.popup { display: none; position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000; }
+.popup-content { background: #fff; padding:20px 30px; border-radius:12px; text-align:center; max-width:300px; }
+.popup .close { position:absolute; top:5px; right:10px; cursor:pointer; font-size:20px; }
+#popupYes, #popupNo { margin:10px; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; }

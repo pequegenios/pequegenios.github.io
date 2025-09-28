@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números 1–10 – Juego Autismo</title>
+<link rel="stylesheet" href="mapa_autismo.css">
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="wrap">
+  
+
+    <section class="niveles">
+      <button id="nivel1" class="nivel">Nivel 1</button>
+      <button id="nivel2" class="nivel">Nivel 2</button>
+      <button id="nivel3" class="nivel">Nivel 3</button>
+    </section>
+  </main>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <div class="emoji">❌</div>
+      <h2>Nivel no desbloqueado</h2>
+      <p>Debes completar los niveles anteriores para acceder.</p>
+    </div>
+  </div>
+
+<div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <p id="popupMessage"></p>
+    <button id="popupYes">Sí</button>
+    <button id="popupNo">No</button>
+  </div>
+</div>
+
+
+
+<script src="mapa_autismo.js"></script>
+</body>
+</html>

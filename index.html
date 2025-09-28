@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INNOVAKIDS · Acceso</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="bg-anim" aria-hidden="true">
+    <div class="orb orb--a"></div>
+    <div class="orb orb--b"></div>
+    <div class="orb orb--c"></div>
+  </div>
+
+  <main class="stage" id="stage">
+    <section class="card" role="main" aria-labelledby="title">
+      <div class="brand">
+        <img src="imagenes/logo.png" alt="INNOVAKIDS logo" id="logoImg" onerror="this.style.display='none'"/>
+        <div class="brand-text">
+          <h1 id="title">INNOVAKIDS</h1>
+          <span class="by">by INNOVAKIDS</span>
+        </div>
+      </div>
+
+      <p class="lead">¡Bienvenido! Ingresa tu usuario y contraseña para empezar.</p>
+
+      <form id="loginForm" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="user" class="sr-only">Usuario</label>
+          <div class="input-wrap">
+            <span class="icon icon-user" aria-hidden="true">👤</span>
+            <input id="user" name="user" placeholder="Usuario" inputmode="text" autocomplete="username" required />
+            <span class="status status-user" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="pass" class="sr-only">Contraseña</label>
+          <div class="input-wrap">
+            <span class="icon icon-lock" aria-hidden="true">🔒</span>
+            <input id="pass" name="pass" type="password" placeholder="Contraseña" autocomplete="current-password" required />
+            <button type="button" id="togglePass" class="toggle-pass" aria-label="Mostrar contraseña">👁️</button>
+          </div>
+
+          <div class="pw-meta">
+            <div id="pwStrength" class="pw-strength" aria-hidden="true">
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            </div>
+            <small class="pw-tip" id="pwTip">Escribe tu contraseña</small>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="loginBtn" class="btn primary" type="submit" aria-live="polite">Entrar</button>
+        </div>
+      </form>
+
+      <div class="foot">
+        <small class="muted">Diseñado para estudiantes 1°–4° · MVP · frontend</small>
+      </div>
+    </section>
+  </main>
+
+  <div id="modalError" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" role="document">
+      <div class="modal-emoji">⚠️</div>
+      <h3 id="modalTitle">Acceso denegado</h3>
+      <p id="modalMsg">Usuario o contraseña incorrectos. Intenta de nuevo.</p>
+      <div class="modal-actions">
+        <button id="modalClose" class="btn">Intentar otra vez</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="loaderScreen" class="loader-screen" aria-hidden="true">
+    <div class="loader-card">
+      <img src="imagenes/logo.png" alt="" onerror="this.style.display='none'">
+      <div class="loader-ring" aria-hidden="true"></div>
+      <p>Cargando el aula…</p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

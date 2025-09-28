@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa – Juego 1° Grado</title>
+  <link rel="stylesheet" href="mapa.css">
+</head>
+<body>
+  <main>
+    <h1 class="titulo">Mapa de Niveles</h1>
+    <p class="lead">Selecciona un nivel para comenzar</p>
+
+    <!-- Botones de niveles -->
+    <button id="nivel1" class="nivel">1</button>
+    <button id="nivel2" class="nivel">2</button>
+    <button id="nivel3" class="nivel">3</button>
+  </main>
+
+  <!-- Popup (informativo) -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <div class="emoji">⭐</div>
+      <h2 id="popupTitle">Nivel bloqueado</h2>
+      <p id="popupMsg">Completa el nivel anterior para desbloquear este.</p>
+    </div>
+  </div>
+
+  <script src="mapa.js"></script>
+</body>
+</html>

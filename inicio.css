@@ -1,0 +1,179 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+body {
+  margin: 0;
+  font-family: 'Comic Neue', sans-serif;
+  background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 25px;
+  background: #FFD166;
+  color: #073B4C;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-60px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.filtro-btn {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #06D6A0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtro-btn:hover {
+  transform: scale(1.1);
+  background: #118AB2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.avance {
+  width: 90%;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.barra-progreso {
+  width: 100%;
+  background: #E0E0E0;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 25px;
+  margin-top: 8px;
+}
+
+.barra-llena {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #FFD166, #EF476F, #06D6A0);
+  transition: width 0.8s ease-in-out;
+  border-radius: 25px;
+  animation: barraAnim 2s infinite alternate;
+}
+
+@keyframes barraAnim {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+.alumnos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 0 auto 50px auto;
+}
+
+.alumno {
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  transform: translateY(0);
+  animation: fadeBounce 0.6s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alumno:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+@keyframes fadeBounce {
+  0% { opacity: 0; transform: translateY(20px);}
+  60% { opacity: 1; transform: translateY(-5px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* Colores por tipo de alumno */
+.alumno[data-tipo="autismo"] { background: #FFB6B9; }
+.alumno[data-tipo="dificultad"] { background: #8EC5FC; }
+.alumno[data-tipo="normal"] { background: #C1F7DC; }
+
+.estado {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: popUp 0.4s ease;
+}
+
+@keyframes popUp {
+  from { transform: scale(0.5); opacity: 0;}
+  to { transform: scale(1); opacity: 1;}
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #EF476F;
+}
+
+.estrellas {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.estrella {
+  width: 30px;
+  height: 30px;
+  margin: 0 3px;
+  background: url('data:image/svg+xml;utf8,<svg fill="gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.78 1.4 8.168L12 18.896l-7.334 3.862 1.4-8.168L.132 9.21l8.2-1.192z"/></svg>') no-repeat center/contain;
+  animation: brillar 1s ease-in-out infinite alternate;
+}
+
+@keyframes brillar {
+  from { transform: scale(1);}
+  to { transform: scale(1.3);}
+}

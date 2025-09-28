@@ -1,0 +1,104 @@
+:root{
+  --bg:#e0f7ff;
+  --text:#1e3a8a;
+  --tile-bg:#ffffff;
+  --colors: #f44336,#e91e63,#9c27b0,#673ab7,#3f51b5,#2196f3,#03a9f4,#00bcd4,#009688,#4caf50;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,Arial;}
+body,html{height:100%;overflow:auto;}
+.background{
+  position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;
+  background:linear-gradient(135deg,#4ade80,#22d3ee,#facc15,#ff77a9);
+  background-size:400% 400%;
+  animation:gradient 20s ease infinite;
+}
+@keyframes gradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.wrap{
+  width:95%;max-width:900px;margin:20px auto;padding:20px;
+  background:rgba(255,255,255,0.85);border-radius:20px;position:relative;overflow:auto;
+  box-shadow:0 12px 24px rgba(0,0,0,0.15);
+}
+header h1{color:var(--text);text-align:center;font-size:2rem;margin-bottom:6px;}
+.lead{text-align:center;color:var(--text);margin-bottom:20px;font-size:1.1rem;}
+.status{padding:14px;text-align:center;font-weight:bold;border-radius:14px;background:var(--tile-bg);box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:20px;}
+.board{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:16px;min-height:300px;
+}
+.completed{
+  margin:10px auto;
+  padding:10px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.7);
+  min-height:50px;
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;
+  font-weight:bold;color:var(--text);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.tile{
+  width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:2rem;font-weight:700;color:#fff;
+  cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,0.1);
+  transition:transform 0.3s,color 0.5s,background 0.5s;
+}
+.tile:hover{transform:scale(1.1) rotate(-3deg);}
+.tile.correct{animation:pop 0.5s ease forwards;}
+.tile.wrong{animation:shake 0.35s;}
+@keyframes shake{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}100%{transform:translateX(0)}}
+@keyframes pop{0%{transform:scale(0.8)}50%{transform:scale(1.4)}100%{transform:scale(1.2)}}
+.controls{display:flex;justify-content:center;gap:12px;margin-top:14px;}
+.btn{padding:12px 18px;border-radius:14px;border:none;background:#22d3ee;color:#fff;font-weight:600;cursor:pointer;transition:transform 0.2s, background 0.3s;}
+.btn:hover{transform:scale(1.05);background:#06b6d4;}
+.btn.secondary{background:#fff;color:#22d3ee;border:2px solid #22d3ee;}
+.btn.link{background:transparent;color:var(--text);text-decoration:underline;}
+.result{margin-top:16px;text-align:center;font-weight:700;font-size:1.2rem;color:#065f46;}
+.popup{
+  position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);
+  display:flex;align-items:center;justify-content:center;z-index:1000;
+}
+.popup.hidden{display:none;}
+.popup-content{
+  background:#fff;padding:20px 30px;border-radius:20px;max-width:400px;text-align:center;
+  box-shadow:0 12px 24px rgba(0,0,0,0.3);
+}
+.popup-content img{width:200px;border-radius:15px;margin-bottom:12px;}
+.collection{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:12px;}
+.collection img{width:100px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+canvas#confetti{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;}
+
+#endPopup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+#endPopup.hidden { display: none; }
+#endPopup .popup-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+#endPopup button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#retryBtn { background: #f44336; color: #fff; }
+#mapBtn { background: #4caf50; color: #fff; }
+
+
+
+
+
